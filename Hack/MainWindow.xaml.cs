@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 
 namespace Hack
@@ -32,8 +33,17 @@ namespace Hack
 
         }
 
-      
-
        
+
+        private void registerClick(object sender, RoutedEventArgs e)
+        {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+          //  Trace.WriteLine(userName);
+            Register register = new Register(userName);
+            register.Show();
+            this.Close();
+          
+
+        }
     }
 }
