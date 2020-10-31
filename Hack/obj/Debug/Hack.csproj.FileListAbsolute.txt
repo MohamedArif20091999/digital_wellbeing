@@ -1,0 +1,15 @@
+C:\Users\Arif\source\repos\Hack\Hack\bin\Debug\Hack.exe.config
+C:\Users\Arif\source\repos\Hack\Hack\bin\Debug\Hack.exe
+C:\Users\Arif\source\repos\Hack\Hack\bin\Debug\Hack.pdb
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.csprojAssemblyReference.cache
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\MainWindow.g.cs
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\App.g.cs
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack_MarkupCompile.cache
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack_MarkupCompile.lref
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\MainWindow.baml
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.g.resources
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.Properties.Resources.resources
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.csproj.GenerateResource.cache
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.csproj.CoreCompileInputs.cache
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.exe
+C:\Users\Arif\source\repos\Hack\Hack\obj\Debug\Hack.pdb
