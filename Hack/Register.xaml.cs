@@ -57,7 +57,13 @@ namespace Hack
                                 if (Username == name)
                                 {
                                     Trace.WriteLine("user already present!!");
-                                    MessageBox.Show("User already exists");
+                                  var result=  MessageBox.Show("User already exists","Info",MessageBoxButton.OK);
+                                   if(result == MessageBoxResult.OK)
+                                    {
+                                        Login login = new Login(Username);
+                                        login.Show();
+                                        this.Close();
+                                    }
                                 }
                                 
 
@@ -67,7 +73,7 @@ namespace Hack
                     else
                     {
                         reader.Close();
-                       // MessageBox.Show("not exists");
+                       
                         if (password != cpassword)
                         {
                             submitButton.Visibility = Visibility.Visible;

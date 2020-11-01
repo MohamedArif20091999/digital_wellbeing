@@ -45,5 +45,13 @@ namespace Hack
           
 
         }
+
+        private void loginClick(object sender, RoutedEventArgs e)
+        {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+            Login login = new Login(userName);
+            login.Show();
+            this.Close();
+        }
     }
 }

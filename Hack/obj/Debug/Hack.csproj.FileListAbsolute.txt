@@ -51,3 +51,5 @@ E:\digital_wellbeing\Hack\bin\Debug\System.Text.Json.xml
 E:\digital_wellbeing\Hack\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\digital_wellbeing\Hack\bin\Debug\System.ValueTuple.xml
 E:\digital_wellbeing\Hack\obj\Debug\Hack.csproj.CopyComplete
+E:\digital_wellbeing\Hack\obj\Debug\Login.g.cs
+E:\digital_wellbeing\Hack\obj\Debug\Login.baml
