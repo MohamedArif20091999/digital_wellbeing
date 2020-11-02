@@ -5,17 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        
+        Title="Register" MaxHeight="500" MaxWidth="950" Background="{DynamicResource windowbackground}" Width="889.5">
+
+
+    <Window.Resources>
+        <LinearGradientBrush x:Key="windowbackground">
+            <GradientStop Offset="0.1" Color="#70f3a9" />
+            <GradientStop Offset="0.6" Color="#a2ebe8"/>
+        </LinearGradientBrush>
+    </Window.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="79" Margin="61,64,0,0" FontSize="20" FontWeight="DemiBold" TextWrapping="Wrap" Text="Register here!" VerticalAlignment="Top" Width="440"/>
-        <Label  x:Name="userNameBox" Content="" HorizontalAlignment="Left" Height="54" Margin="191,148,0,0" VerticalAlignment="Top" Width="268"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="15" FontWeight="DemiBold"  Height="70" Margin="77,163,0,0" TextWrapping="Wrap" Text="   Username:" VerticalAlignment="Top" Width="90"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="15" FontWeight="DemiBold" Height="56" Margin="77,256,0,0" TextWrapping="Wrap" Text="create password" VerticalAlignment="Top" Width="112"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="53" Margin="218,239,0,0" VerticalAlignment="Top" Width="306"/>
-        <TextBlock FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Left" Height="37" Margin="61,342,0,0" TextWrapping="Wrap" Text="Confirm password:" VerticalAlignment="Top" Width="142"/>
-        <PasswordBox x:Name="cpasswordBox" HorizontalAlignment="Left" Height="52" Margin="218,327,0,0" VerticalAlignment="Top" Width="373"/>
-        <Button x:Name="submitButton" Content="submit" BorderBrush="black" BorderThickness="3" FontSize="20" Click="submitBtn" HorizontalAlignment="Left" Height="76" Margin="630,256,0,0" VerticalAlignment="Top" Width="138"/>
-        <Label x:Name="notMatching" Content="" FontSize="15" FontWeight="DemiBold" Foreground="Red" HorizontalAlignment="Left" Height="54" Margin="537,144,0,0" VerticalAlignment="Top" Width="246" RenderTransformOrigin="0.5,0.5">
+
+
+
+        <Label x:Name="notMatching" Content="" FontSize="15" FontWeight="DemiBold" Foreground="Red" HorizontalAlignment="Left" Height="54" Margin="542,3,0,0" VerticalAlignment="Top" Width="246" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,6 +30,27 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <Grid Background="White" x:Name="register" HorizontalAlignment="Left" Height="474" Margin="347,0,-50,0" VerticalAlignment="Top" Width="585">
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="43,30,0,0" FontSize="30" FontWeight="Bold" TextWrapping="Wrap" Text="New here!" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.376,0.639"/>
+            <TextBlock HorizontalAlignment="Left" FontSize="15" FontWeight="DemiBold"  Height="34" Margin="10,158,0,0" TextWrapping="Wrap" Text="   Username:" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.65,0.543"/>
+            <Label  x:Name="userNameBox" Content="" HorizontalAlignment="Left" Height="37" Margin="169,151,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="DemiBold" Width="243"/>
+            <TextBlock HorizontalAlignment="Left" FontSize="15" FontWeight="DemiBold" Height="35" Margin="8,202,0,0" TextWrapping="Wrap" Text="   Create password:" VerticalAlignment="Top" Width="137"/>
+            <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="37" Margin="167,196,0,0" VerticalAlignment="Top" Width="250"/>
+            <TextBlock FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Left" Height="37" Margin="20,253,0,0" TextWrapping="Wrap" Text="Confirm password:" VerticalAlignment="Top" Width="142"/>
+            <PasswordBox x:Name="cpasswordBox" HorizontalAlignment="Left" Height="37" Margin="168,246,0,0" VerticalAlignment="Top" Width="250"/>
+            <Button x:Name="submitButton" Content="Register" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="20" FontWeight="DemiBold" Click="submitBtn" HorizontalAlignment="Left" Height="38" Margin="301,314,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.599,0.403"/>
+            <TextBlock HorizontalAlignment="Left" Height="54" Margin="44,76,0,0" TextWrapping="Wrap" FontSize="20" FontWeight="DemiBold" Text="Register for an account" VerticalAlignment="Top" Width="252"/>
+
+
+
+
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="18,48,0,0" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" Text="Welcome back!" VerticalAlignment="Top" Height="46" Width="264"/>
+        <TextBlock  HorizontalAlignment="Left" FontWeight="DemiBold" Height="27" Margin="13,161,0,0" TextWrapping="Wrap" Text="Username:" FontSize="15"  VerticalAlignment="Top" Width="97"/>
+        <Label x:Name="loginUsername" FontSize="18" FontWeight="DemiBold" Content="" HorizontalAlignment="Left" Height="41" Margin="110,159,0,0" VerticalAlignment="Top" Width="258"/>
+        <PasswordBox x:Name="loginPasswordbox" HorizontalAlignment="Left" Height="34" Margin="106,201,0,0" VerticalAlignment="Top" Width="202"/>
+        <TextBlock FontWeight="DemiBold" HorizontalAlignment="Left" Height="27" Margin="4,204,0,0" TextWrapping="Wrap" Text="  Password:" FontSize="15" VerticalAlignment="Top" Width="109"/>
+        <Button Content="Login" Click="loginClick" HorizontalAlignment="Left" Height="31" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="17" FontWeight="DemiBold" Margin="224,271,0,0" VerticalAlignment="Top" Width="86"/>
 
     </Grid>
 </Window>

@@ -22,12 +22,15 @@ namespace Hack
     public partial class Register : Window
     {
         String Username;
+        String usernamesmall;
         public Register(String username)
         {
             InitializeComponent();
             Trace.WriteLine(username);
             userNameBox.Content = username;
             Username = username.ToUpper();
+            loginUsername.Content = username;
+            usernamesmall = username;
             
             
         }
@@ -57,13 +60,21 @@ namespace Hack
                                 if (Username == name)
                                 {
                                     Trace.WriteLine("user already present!!");
-                                  var result=  MessageBox.Show("User already exists","Info",MessageBoxButton.OK);
+                                  var result=  MessageBox.Show("User already exists try logging in.","Info",MessageBoxButton.OK);
                                    if(result == MessageBoxResult.OK)
                                     {
-                                        Login login = new Login(Username);
-                                        login.Show();
+                                        Register register = new Register(Username);
+                                        register.Show();
                                         this.Close();
+                                        // login.Show();
+                                       
                                     }
+                                }
+                                else
+                                {
+                                    Personaldetails pd = new Personaldetails(usernamesmall);
+                                    pd.Show();
+                                    this.Close();
                                 }
                                 
 
@@ -94,10 +105,39 @@ namespace Hack
                      
                 conn.Close();
             }
-
-
-
          
+        }
+
+        private void loginClick(object sender, RoutedEventArgs e)
+        {
+            String connString = DbConnection.Connect();
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT password FROM register WHERE name='" + Username + "';", conn))
+                using (var reader = cmd.ExecuteReader())
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            String password = reader.GetString(0);
+                            {
+                                if (password == loginPasswordbox.Password.ToString())
+                                {
+
+                                    MessageBox.Show("Login success!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("password is wrong!!!!", "error");
+                                }
+
+
+                            }
+                        }
+                    }
+            }
         }
     }
 }

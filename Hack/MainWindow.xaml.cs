@@ -30,11 +30,9 @@ namespace Hack
         {
             InitializeComponent();
            
-
         }
 
-       
-
+      
         private void registerClick(object sender, RoutedEventArgs e)
         {
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
@@ -43,7 +41,6 @@ namespace Hack
             register.Show();
             this.Close();
           
-
         }
 
         private void loginClick(object sender, RoutedEventArgs e)

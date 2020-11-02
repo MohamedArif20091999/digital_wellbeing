@@ -53,3 +53,5 @@ E:\digital_wellbeing\Hack\bin\Debug\System.ValueTuple.xml
 E:\digital_wellbeing\Hack\obj\Debug\Hack.csproj.CopyComplete
 E:\digital_wellbeing\Hack\obj\Debug\Login.g.cs
 E:\digital_wellbeing\Hack\obj\Debug\Login.baml
+E:\digital_wellbeing\Hack\obj\Debug\Personaldetails.g.cs
+E:\digital_wellbeing\Hack\obj\Debug\Personaldetails.baml
