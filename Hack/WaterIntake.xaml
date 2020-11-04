@@ -28,6 +28,7 @@
         <TextBox x:Name="cups" HorizontalAlignment="Left" Height="23" Margin="174,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339" FontSize="14"/>
         <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Margin="32,368,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="back_Click"/>
         <Button x:Name="reportnav" Content="Report" HorizontalAlignment="Left" Margin="593,368,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Height="66" Margin="32,74,0,0" TextWrapping="Wrap" Text="We need water for digestion, to absorb nutrients, to help us move, get rid of &#xD;&#xA;waste products and to regulate our body temperature. If the body doesn't have&#xD;&#xA;enough water (known as dehydration), it won't function as well." VerticalAlignment="Top" Width="497" FontSize="14" Background="{x:Null}" BorderThickness="0"/>
 
     </Grid>
 </Window>
