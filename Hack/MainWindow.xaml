@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Register" HorizontalAlignment="Left" Height="54" Margin="58,231,0,0" VerticalAlignment="Top" Width="154" Click="registerClick"/>
-        <Button Content="Login" HorizontalAlignment="Left" Height="34" Margin="448,251,0,0" VerticalAlignment="Top" Click="loginClick" Width="212"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA7EBEF" Offset="0"/>
+                <GradientStop Color="#FF70F3A9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Sign up / Login" HorizontalAlignment="Left" Height="41" Margin="309,241,0,0" VerticalAlignment="Top" Width="145" Click="registerClick" FontSize="18" Background="White"/>
 
     </Grid>
 </Window>

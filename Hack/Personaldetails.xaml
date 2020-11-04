@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Personaldetails" Height="600" Width="680" Background="{DynamicResource windowbackground}" >
+        Title="Personaldetails" Height="550" Width="680" Background="{DynamicResource windowbackground}" >
 
     <Window.Resources>
         <LinearGradientBrush x:Key="windowbackground">

@@ -43,7 +43,8 @@ namespace Hack
             
             
             var userName = userNameLabel.Content.ToString();
-            String connString = DbConnection.Connect();
+            //String connString = DbConnection.Connect();
+            String connString = "Host=localhost;Username=postgres;Password=123;Database=hackathon";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -55,8 +56,10 @@ namespace Hack
                         {
 
                             //int id = reader.GetInt32(0);
-                            id = reader.GetInt32(0);
-                            Trace.WriteLine(id);
+
+                            //id = reader.GetInt32(0);
+                            //Trace.WriteLine(id);
+
                            // reader.Close();
                         }
                         reader.Close();
@@ -66,6 +69,10 @@ namespace Hack
 
                 cmdInsert.ExecuteNonQuery();
                 //Trace.WriteLine("Done!!");
+                MessageBox.Show("Done!!");
+                WaterLevel wl = new WaterLevel(userName);
+                wl.Show();
+                this.Close();
                 
             }
 

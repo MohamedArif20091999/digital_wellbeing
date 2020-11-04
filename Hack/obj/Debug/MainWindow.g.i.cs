@@ -72,16 +72,8 @@ namespace Hack {
             {
             case 1:
             
-            #line 10 "..\..\MainWindow.xaml"
+            #line 16 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.registerClick);
-            
-            #line default
-            #line hidden
-            return;
-            case 2:
-            
-            #line 11 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.loginClick);
             
             #line default
             #line hidden

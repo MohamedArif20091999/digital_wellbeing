@@ -23,17 +23,22 @@ namespace Hack
     {
         String Username;
         String usernamesmall;
+        string name;
         public Register(String username)
         {
             InitializeComponent();
+            name = username;
             Trace.WriteLine(username);
             userNameBox.Content = username;
             Username = username.ToUpper();
             loginUsername.Content = username;
-            usernamesmall = username;
-            
-            
+            usernamesmall = username; 
         }
+        public Register()
+        {
+            InitializeComponent();
+        }
+        
 
         private void submitBtn(object sender, RoutedEventArgs e)
         {
@@ -41,8 +46,10 @@ namespace Hack
             String cpassword = cpasswordBox.Password.ToString();
             Trace.WriteLine(cpasswordBox.Password.ToString());
 
-            String connString = DbConnection.Connect();
-          
+            //String connString = DbConnection.Connect();
+            String connString= "Host=localhost;Username=postgres;Password=123;Database=hackathon";
+
+
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -63,8 +70,8 @@ namespace Hack
                                   var result=  MessageBox.Show("User already exists try logging in.","Info",MessageBoxButton.OK);
                                    if(result == MessageBoxResult.OK)
                                     {
-                                        Register register = new Register(Username);
-                                        register.Show();
+                                        Personaldetails pd = new Personaldetails(usernamesmall);
+                                        pd.Show();
                                         this.Close();
                                         // login.Show();
                                        
@@ -97,7 +104,16 @@ namespace Hack
 
                                 cmdInsert.ExecuteNonQuery();
                               //  Trace.WriteLine("inserted!");
-                                MessageBox.Show("registered!!");
+                                //MessageBox.Show("registered!!");
+                            var result = MessageBox.Show("Registered", "Info", MessageBoxButton.OK);
+                            if (result == MessageBoxResult.OK)
+                            {
+
+                                Personaldetails pd = new Personaldetails(usernamesmall);
+                                pd.Show();
+                                this.Close();
+
+                            }
                         }
                     }
                
@@ -110,7 +126,8 @@ namespace Hack
 
         private void loginClick(object sender, RoutedEventArgs e)
         {
-            String connString = DbConnection.Connect();
+            //String connString = DbConnection.Connect();
+            String connString = "Host=localhost;Username=postgres;Password=123;Database=hackathon";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -127,6 +144,18 @@ namespace Hack
                                 {
 
                                     MessageBox.Show("Login success!");
+                                    //--------------------------------
+                                    /*Personaldetails pd = new Personaldetails(usernamesmall);
+                                    pd.Show();
+                                    this.Close();
+                                    */
+                                    WaterLevel wl = new WaterLevel(name);
+                                    //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                                    //usertext.Text = userName;
+                                    wl.Show();
+                                    this.Close();
+                                    //---------------------------------
+
                                 }
                                 else
                                 {

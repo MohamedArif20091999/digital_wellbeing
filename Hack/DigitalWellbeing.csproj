@@ -95,6 +95,12 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WaterIntake.xaml.cs">
+      <DependentUpon>WaterIntake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaterLevel.xaml.cs">
+      <DependentUpon>WaterLevel.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +123,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaterIntake.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaterLevel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +161,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
