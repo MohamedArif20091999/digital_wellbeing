@@ -31,10 +31,12 @@ namespace Hack
         {
             int id=0;
             String gender="default";
-            string date = dobBox.Text;
+            //string date = datePicker.Text;
+            string date = Convert.ToDateTime(datePicker.Text).ToString("yyyy-MM-dd");
+
             //DateTime Date = new DateTime(long.Parse(date));
-            Trace.WriteLine(DateTime.Parse(date));
-            Trace.WriteLine(date.GetType());
+            //Trace.WriteLine(DateTime.Parse(date));
+            //Trace.WriteLine(date.GetType());
             if (maleRadio.IsChecked == true) gender = maleRadio.Content.ToString();
             if (femaleRadio.IsChecked == true) gender = femaleRadio.Content.ToString();
             Trace.WriteLine(gender);
@@ -43,8 +45,8 @@ namespace Hack
             
             
             var userName = userNameLabel.Content.ToString();
-            String connString = DbConnection.Connect();
-            using (var conn = new NpgsqlConnection(connString))
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            using (var conn = new NpgsqlConnection(connect))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT id FROM register WHERE name='" + userName.ToUpper() + "';", conn))
@@ -66,8 +68,10 @@ namespace Hack
 
                 cmdInsert.ExecuteNonQuery();
                 //Trace.WriteLine("Done!!");
+                conn.Close();
                 
             }
+            
 
 
         }

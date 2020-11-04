@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hack.Utilities;
+using System.Configuration;
 using Npgsql;
 
 namespace Hack
@@ -31,8 +33,7 @@ namespace Hack
             Username = username.ToUpper();
             loginUsername.Content = username;
             usernamesmall = username;
-            
-            
+                        
         }
 
         private void submitBtn(object sender, RoutedEventArgs e)
@@ -41,9 +42,9 @@ namespace Hack
             String cpassword = cpasswordBox.Password.ToString();
             Trace.WriteLine(cpasswordBox.Password.ToString());
 
-            String connString = DbConnection.Connect();
-          
-            using (var conn = new NpgsqlConnection(connString))
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+         
+            using (var conn = new NpgsqlConnection(connect))
             {
                 conn.Open();
                 //Trace.WriteLine("connection opened!!");
@@ -77,7 +78,6 @@ namespace Hack
                                     this.Close();
                                 }
                                 
-
                             }
                         }
                     }
@@ -87,17 +87,32 @@ namespace Hack
                        
                         if (password != cpassword)
                         {
-                            submitButton.Visibility = Visibility.Visible;
-                            notMatching.Content = "passwords did not match";
+                            //submitButton.Visibility = Visibility.Visible;
+                           notMatching1.Content = "passwords did not match";
                         }
                         else
                         {
-                            var cmdInsert = new NpgsqlCommand("INSERT INTO register (name,password) VALUES ('" + Username + "','" + password + "');", conn);
+                            // String encryptedPassword = Encrypt.Encryptdata(password);
+                            //Trace.WriteLine(encryptedPassword);
+                            String encryptedPassword = PasswordAuth.EncryptString(password);
+                            Trace.WriteLine(encryptedPassword);
+
+                            var cmdInsert = new NpgsqlCommand("INSERT INTO register (name,password) VALUES ('" + Username + "','" + encryptedPassword + "');", conn);
                             
 
                                 cmdInsert.ExecuteNonQuery();
                               //  Trace.WriteLine("inserted!");
-                                MessageBox.Show("registered!!");
+                                //MessageBox.Show("registered!!");
+                            var result = MessageBox.Show("Registered", "Info", MessageBoxButton.OK);
+                            if (result == MessageBoxResult.OK)
+                            {
+
+                                Personaldetails pd = new Personaldetails(usernamesmall);
+                                pd.Show();
+                                this.Close();
+
+                            }
+
                         }
                     }
                
@@ -110,10 +125,12 @@ namespace Hack
 
         private void loginClick(object sender, RoutedEventArgs e)
         {
-            String connString = DbConnection.Connect();
-            using (var conn = new NpgsqlConnection(connString))
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+           // String connString = DbConnection.Connect();
+            using (var conn = new NpgsqlConnection(connect))
             {
                 conn.Open();
+                Trace.WriteLine("conn opened!");
                 using (var cmd = new NpgsqlCommand("SELECT password FROM register WHERE name='" + Username + "';", conn))
                 using (var reader = cmd.ExecuteReader())
                     if (reader.HasRows)
@@ -122,8 +139,13 @@ namespace Hack
                         {
 
                             String password = reader.GetString(0);
+                           // String encryptedPassword = Encrypt.Encryptdata(password);
+                         //   String decryptedPassword = Decrypt.Decryptdata(password);
+                           // Trace.WriteLine(decryptedPassword);
+                            String usertypedPassword = PasswordAuth.EncryptString(loginPasswordbox.Password.ToString());
+                            Trace.WriteLine(usertypedPassword);
                             {
-                                if (password == loginPasswordbox.Password.ToString())
+                                if (password == usertypedPassword)
                                 {
 
                                     MessageBox.Show("Login success!");
@@ -137,6 +159,7 @@ namespace Hack
                             }
                         }
                     }
+                conn.Close();
             }
         }
     }
