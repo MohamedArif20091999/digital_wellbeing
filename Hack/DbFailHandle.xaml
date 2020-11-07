@@ -1,0 +1,16 @@
+﻿<Window x:Class="Hack.DbFailHandle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hack"
+        mc:Ignorable="d"
+        Title="DbFailHandle" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="106,79,0,0" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" Text="Database" VerticalAlignment="Top" Width="97"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="221,73,0,0" TextWrapping="Wrap" FontWeight="DemiBold" FontSize="25" Text="postgres" VerticalAlignment="Top" Width="302"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="103,150,0,0" TextWrapping="Wrap" Text="Password" FontWeight="Bold" FontSize="18" VerticalAlignment="Top" Width="114"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="51" Margin="222,133,0,0" VerticalAlignment="Top" Width="234"/>
+        <Button Content="Submit" FontSize="20" Click="submitClick" HorizontalAlignment="Left" Height="37" Margin="456,327,0,0" VerticalAlignment="Top" Width="167"/>
+    </Grid>
+</Window>

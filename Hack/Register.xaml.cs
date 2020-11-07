@@ -43,124 +43,142 @@ namespace Hack
             Trace.WriteLine(cpasswordBox.Password.ToString());
 
             var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-         
+
             using (var conn = new NpgsqlConnection(connect))
             {
-                conn.Open();
-                //Trace.WriteLine("connection opened!!");
-               
-                using (var cmd = new NpgsqlCommand("SELECT * FROM register WHERE name='"+Username+"';", conn))
-                using (var reader = cmd.ExecuteReader())
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
+                try
+                {
+                    conn.Open();
+                    //Trace.WriteLine("connection opened!!");
+
+                    using (var cmd = new NpgsqlCommand("SELECT * FROM register WHERE name='" + Username + "';", conn))
+                    using (var reader = cmd.ExecuteReader())
+                        if (reader.HasRows)
                         {
-                            int id = reader.GetInt32(0);
-                            String name = reader.GetString(1);
+                            while (reader.Read())
                             {
-                                if (Username == name)
+                                int id = reader.GetInt32(0);
+                                String name = reader.GetString(1);
                                 {
-                                    Trace.WriteLine("user already present!!");
-                                  var result=  MessageBox.Show("User already exists try logging in.","Info",MessageBoxButton.OK);
-                                   if(result == MessageBoxResult.OK)
+                                    if (Username == name)
                                     {
-                                        Register register = new Register(Username);
-                                        register.Show();
-                                        this.Close();
-                                        // login.Show();
-                                       
+                                        Trace.WriteLine("user already present!!");
+                                        var result = MessageBox.Show("User already exists try logging in.", "Info", MessageBoxButton.OK);
+                                        if (result == MessageBoxResult.OK)
+                                        {
+                                            Register register = new Register(Username);
+                                            register.Show();
+                                            this.Close();
+                                            // login.Show();
+
+                                        }
                                     }
+                                    else
+                                    {
+                                        Personaldetails pd = new Personaldetails(usernamesmall);
+                                        pd.Show();
+                                        this.Close();
+                                    }
+
                                 }
-                                else
-                                {
-                                    Personaldetails pd = new Personaldetails(usernamesmall);
-                                    pd.Show();
-                                    this.Close();
-                                }
-                                
                             }
-                        }
-                    }
-                    else
-                    {
-                        reader.Close();
-                       
-                        if (password != cpassword)
-                        {
-                            //submitButton.Visibility = Visibility.Visible;
-                           notMatching1.Content = "passwords did not match";
                         }
                         else
                         {
-                            // String encryptedPassword = Encrypt.Encryptdata(password);
-                            //Trace.WriteLine(encryptedPassword);
-                            String encryptedPassword = PasswordAuth.EncryptString(password);
-                            Trace.WriteLine(encryptedPassword);
+                            reader.Close();
 
-                            var cmdInsert = new NpgsqlCommand("INSERT INTO register (name,password) VALUES ('" + Username + "','" + encryptedPassword + "');", conn);
-                            
+                            if (password != cpassword)
+                            {
+                                //submitButton.Visibility = Visibility.Visible;
+                                notMatching1.Content = "passwords did not match";
+                            }
+                            else
+                            {
+                                // String encryptedPassword = Encrypt.Encryptdata(password);
+                                //Trace.WriteLine(encryptedPassword);
+                                String encryptedPassword = PasswordAuth.EncryptString(password);
+                                Trace.WriteLine(encryptedPassword);
+
+                                var cmdInsert = new NpgsqlCommand("INSERT INTO register (name,password) VALUES ('" + Username + "','" + encryptedPassword + "');", conn);
+
 
                                 cmdInsert.ExecuteNonQuery();
-                              //  Trace.WriteLine("inserted!");
+                                //  Trace.WriteLine("inserted!");
                                 //MessageBox.Show("registered!!");
-                            var result = MessageBox.Show("Registered", "Info", MessageBoxButton.OK);
-                            if (result == MessageBoxResult.OK)
-                            {
+                                var result = MessageBox.Show("Registered", "Info", MessageBoxButton.OK);
+                                if (result == MessageBoxResult.OK)
+                                {
 
-                                Personaldetails pd = new Personaldetails(usernamesmall);
-                                pd.Show();
-                                this.Close();
+                                    Personaldetails pd = new Personaldetails(usernamesmall);
+                                    pd.Show();
+                                    this.Close();
+
+                                }
 
                             }
-
                         }
-                    }
-               
-              //  Trace.WriteLine("........");
-                     
-                conn.Close();
-            }
+
+                    //  Trace.WriteLine("........");
+
+                    conn.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                }
+
          
         }
 
         private void loginClick(object sender, RoutedEventArgs e)
         {
             var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-           // String connString = DbConnection.Connect();
+            // String connString = DbConnection.Connect();
             using (var conn = new NpgsqlConnection(connect))
             {
-                conn.Open();
-                Trace.WriteLine("conn opened!");
-                using (var cmd = new NpgsqlCommand("SELECT password FROM register WHERE name='" + Username + "';", conn))
-                using (var reader = cmd.ExecuteReader())
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
+                try
+                {
+
+
+                    conn.Open();
+                    Trace.WriteLine("conn opened!");
+                    using (var cmd = new NpgsqlCommand("SELECT password FROM register WHERE name='" + Username + "';", conn))
+                    using (var reader = cmd.ExecuteReader())
+
+                        if (reader.HasRows)
                         {
-
-                            String password = reader.GetString(0);
-                           // String encryptedPassword = Encrypt.Encryptdata(password);
-                         //   String decryptedPassword = Decrypt.Decryptdata(password);
-                           // Trace.WriteLine(decryptedPassword);
-                            String usertypedPassword = PasswordAuth.EncryptString(loginPasswordbox.Password.ToString());
-                            Trace.WriteLine(usertypedPassword);
+                            while (reader.Read())
                             {
-                                if (password == usertypedPassword)
+
+                                String password = reader.GetString(0);
+                                // String encryptedPassword = Encrypt.Encryptdata(password);
+                                //   String decryptedPassword = Decrypt.Decryptdata(password);
+                                // Trace.WriteLine(decryptedPassword);
+                                String usertypedPassword = PasswordAuth.EncryptString(loginPasswordbox.Password.ToString());
+                                Trace.WriteLine(usertypedPassword);
                                 {
+                                    if (password == usertypedPassword)
+                                    {
 
-                                    MessageBox.Show("Login success!");
+                                        MessageBox.Show("Login success!");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("password is wrong!!!!", "error");
+                                    }
+
+
                                 }
-                                else
-                                {
-                                    MessageBox.Show("password is wrong!!!!", "error");
-                                }
-
-
                             }
                         }
-                    }
-                conn.Close();
-            }
+                    conn.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                }
         }
     }
 }

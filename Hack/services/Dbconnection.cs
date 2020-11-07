@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hack.Models;
-using System.Windows;
-using Npgsql;
 using System.Diagnostics;
-namespace Hack
+using System.Windows;
+using Hack.Models;
+using Npgsql;
+
+namespace Hack.services
 {
-    public  class DbConnection
+    class Dbconnection
     {
         public static void Connect()
         {
@@ -72,6 +73,7 @@ namespace Hack
 
 
             }
+
         }
     }
 }

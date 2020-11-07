@@ -55,3 +55,5 @@ E:\digital_wellbeing\Hack\obj\Debug\Login.g.cs
 E:\digital_wellbeing\Hack\obj\Debug\Login.baml
 E:\digital_wellbeing\Hack\obj\Debug\Personaldetails.g.cs
 E:\digital_wellbeing\Hack\obj\Debug\Personaldetails.baml
+E:\digital_wellbeing\Hack\obj\Debug\DbFailHandle.g.cs
+E:\digital_wellbeing\Hack\obj\Debug\DbFailHandle.baml
