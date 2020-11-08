@@ -17,59 +17,20 @@ using System.Data;
 namespace Hack
 {
     /// <summary>
-    /// Interaction logic for WaterLevel.xaml
+    /// Interaction logic for features.xaml
     /// </summary>
-    public partial class WaterLevel : Window
+    public partial class features : Window
     {
-        //string userName;
-        public WaterLevel(string username)
+        public features()
         {
             InitializeComponent();
-            //userName = username;
         }
-        public WaterLevel()
+        public features(string username)
         {
             InitializeComponent();
-            //userName = username;
-        }
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            //Register register = new Register();
-            //register.Show();
-            //this.Close();
-        }
-
-        private void TextBox_TextChanged_3(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Register register = new Register();
-            register.Show();
-            this.Close();
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             WaterIntake wi = new WaterIntake();
             var connStr = "Host=localhost;Username=postgres;Password=123;Database=hackathon";
@@ -93,6 +54,11 @@ namespace Hack
             }
             wi.Show();
             this.Close();
+        }
+
+        private void signout_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

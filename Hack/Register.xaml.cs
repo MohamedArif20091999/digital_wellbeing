@@ -54,7 +54,7 @@ namespace Hack
             {
                 conn.Open();
                 //Trace.WriteLine("connection opened!!");
-               
+                
                 using (var cmd = new NpgsqlCommand("SELECT * FROM register WHERE name='"+Username+"';", conn))
                 using (var reader = cmd.ExecuteReader())
                     if (reader.HasRows)
@@ -67,14 +67,15 @@ namespace Hack
                                 if (Username == name)
                                 {
                                     Trace.WriteLine("user already present!!");
-                                  var result=  MessageBox.Show("User already exists try logging in.","Info",MessageBoxButton.OK);
+                                    var result=  MessageBox.Show("User already exists! Try logging in.","Info",MessageBoxButton.OK);
+                                    
                                    if(result == MessageBoxResult.OK)
                                     {
-                                        Personaldetails pd = new Personaldetails(usernamesmall);
-                                        pd.Show();
-                                        this.Close();
+                                        passwordBox.Clear();
+                                        cpasswordBox.Clear();
+
                                         // login.Show();
-                                       
+
                                     }
                                 }
                                 else
@@ -149,10 +150,11 @@ namespace Hack
                                     pd.Show();
                                     this.Close();
                                     */
-                                    WaterLevel wl = new WaterLevel(name);
+
                                     //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                                    features fts = new features();
                                     //usertext.Text = userName;
-                                    wl.Show();
+                                    fts.Show();
                                     this.Close();
                                     //---------------------------------
 

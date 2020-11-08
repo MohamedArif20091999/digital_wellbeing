@@ -86,6 +86,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="features.xaml.cs">
+      <DependentUpon>features.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -98,9 +101,10 @@
     <Compile Include="WaterIntake.xaml.cs">
       <DependentUpon>WaterIntake.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WaterLevel.xaml.cs">
-      <DependentUpon>WaterLevel.xaml</DependentUpon>
-    </Compile>
+    <Page Include="features.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,10 +131,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WaterIntake.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WaterLevel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,9 +187,6 @@
     <Resource Include="Image7.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="cr2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="cr3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +197,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="r6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Untitled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cr10.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

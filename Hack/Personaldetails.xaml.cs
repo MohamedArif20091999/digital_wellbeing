@@ -70,8 +70,8 @@ namespace Hack
                 cmdInsert.ExecuteNonQuery();
                 //Trace.WriteLine("Done!!");
                 MessageBox.Show("Done!!");
-                WaterLevel wl = new WaterLevel(userName);
-                wl.Show();
+                features fts = new features(userName);
+                fts.Show();
                 this.Close();
                 
             }

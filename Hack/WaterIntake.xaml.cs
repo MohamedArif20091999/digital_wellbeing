@@ -62,8 +62,8 @@ namespace Hack
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            WaterLevel wl = new WaterLevel();
-            wl.Show();
+            features fts = new features();
+            fts.Show();
             this.Close();
         }
     }

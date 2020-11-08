@@ -1,0 +1,101 @@
+﻿<Window x:Class="Hack.features"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hack"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="features" MaxHeight="450" MaxWidth="700">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA7EBEF" Offset="0"/>
+                <GradientStop Color="#FF70F3A9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="28,33,0,0" TextWrapping="Wrap" Text="Hello" VerticalAlignment="Top" Width="54" FontSize="18" Background="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="91,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" FontSize="18" Background="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="28,68,0,0" TextWrapping="Wrap" Text="Switch to your destined!" VerticalAlignment="Top" Width="217" FontSize="18" Background="{x:Null}"/>
+        <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
+        <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14">
+        </Button>
+        <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="599,24,0,0" VerticalAlignment="Top" Width="62" FontSize="14" BorderThickness="0" Background="{x:Null}" Click="signout_Click" />
+        <StackPanel Margin="50,160,540,164">
+            <Button Height="94" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+                <Button.ToolTip>
+                    <ToolTip>
+                        Set timers for breaks
+                    </ToolTip>
+                </Button.ToolTip>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr8.png" Stretch="Fill" Height="94" Width="102"/>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="401,254,185,69">
+            <Button x:Name="waterIntake" Margin="2,2,0,2" RenderTransformOrigin="0.5,0.5" Height="97" Click="Button_Click" BorderThickness="0" Background="{x:Null}" Cursor="Hand" HorizontalAlignment="Left" Width="104">
+                <Button.ToolTip>
+                    <ToolTip>
+                        Water Doctor
+                    </ToolTip>
+                </Button.ToolTip>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="cr10.png" Stretch="Fill" Height="Auto" Width="Auto" Margin="0,0,6,12"/>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="263,160,319,175">
+            <Button Height="86" Cursor="Hand" Width="109" Background="{x:Null}" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Margin="-14,0,0,0">
+                <Button.ToolTip>
+                    <ToolTip>
+                        Relax your eye muscles
+                    </ToolTip>
+                </Button.ToolTip>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr7.png" Height="74" Width="Auto" Stretch="Fill" Margin="10,6,-8,6"/>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="162,270,430,69">
+            <Button Height="82" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+                <Button.ToolTip>
+                    <ToolTip>
+                        Take a break!
+                    </ToolTip>
+                </Button.ToolTip>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr6.png" Height="70" Stretch="Fill" Width="90"/>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="499,160,96,175">
+            <Button Height="82" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+                <Button.ToolTip>
+                    <ToolTip>
+                        Report
+                    </ToolTip>
+                </Button.ToolTip>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr5.png" Height="80" Width="100"/>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
