@@ -25,9 +25,11 @@ namespace Hack
     {
         String Username;
         String usernamesmall;
+        string name;
         public Register(String username)
         {
             InitializeComponent();
+            name = username;
             Trace.WriteLine(username);
             userNameBox.Content = username;
             Username = username.ToUpper();
@@ -35,6 +37,11 @@ namespace Hack
             usernamesmall = username;
                         
         }
+        public Register()
+        {
+            InitializeComponent();
+        }
+        
 
         private void submitBtn(object sender, RoutedEventArgs e)
         {
@@ -66,9 +73,9 @@ namespace Hack
                                         var result = MessageBox.Show("User already exists try logging in.", "Info", MessageBoxButton.OK);
                                         if (result == MessageBoxResult.OK)
                                         {
-                                            Register register = new Register(usernamesmall);
-                                            register.Show();
-                                            this.Close();
+                                        passwordBox.Clear();
+                                        cpasswordBox.Clear();
+                                            
                                             // login.Show();
 
                                         }
@@ -157,14 +164,18 @@ namespace Hack
                                 // Trace.WriteLine(decryptedPassword);
                                 String usertypedPassword = PasswordAuth.EncryptString(loginPasswordbox.Password.ToString());
                                 Trace.WriteLine(usertypedPassword);
-                                {
+
+                             {
                                     if (password == usertypedPassword)
                                     {
 
                                         MessageBox.Show("Login success!");
-                                        Register rg = new Register(usernamesmall);
-                                        rg.Show();
-                                        this.Close();
+                                         features fts = new features(usernamesmall);
+                                    //usertext.Text = userName;
+                                    
+                                    fts.Show();
+                                    this.Close();  
+                                       
                                         
                                     }
                                     else

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         
-        Title="Register" MaxHeight="500" MaxWidth="950" Background="{DynamicResource windowbackground}" Width="889.5">
+        Title="Register" MaxHeight="500" MaxWidth="850" Background="{DynamicResource windowbackground}" Width="889.5">
 
 
     <Window.Resources>
