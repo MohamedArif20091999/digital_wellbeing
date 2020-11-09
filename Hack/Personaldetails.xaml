@@ -23,7 +23,7 @@
         <RadioButton x:Name="femaleRadio" Content="Female" HorizontalAlignment="Left" Height="36" FontSize="20" FontWeight="DemiBold" Margin="289,241,0,0" VerticalAlignment="Top" Width="96"/>
         <TextBlock HorizontalAlignment="Left" Height="34" Margin="24,294,0,0" TextWrapping="Wrap" FontSize="23" FontWeight="DemiBold" Text="     DOB:" VerticalAlignment="Top" Width="102"/>
 
-        <DatePicker  x:Name="datePicker"  Margin="194,297,175,241"/>
+        <DatePicker  x:Name="datePicker"  Margin="194,297,175,191"/>
 
 
 

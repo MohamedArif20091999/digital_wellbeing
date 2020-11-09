@@ -30,7 +30,7 @@
                 </Button.ToolTip>
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr8.png" Stretch="Fill" Height="94" Width="102"/>
+                        <Image Source="cr8.png" Stretch="Fill" Height="94" Width="102"/>
                     </ControlTemplate>
                 </Button.Template>
 
@@ -60,7 +60,7 @@
                 </Button.ToolTip>
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr7.png" Height="74" Width="Auto" Stretch="Fill" Margin="10,6,-8,6"/>
+                        <Image Source="cr7.png" Height="74" Width="Auto" Stretch="Fill" Margin="10,6,-8,6"/>
                     </ControlTemplate>
                 </Button.Template>
 
@@ -75,7 +75,7 @@
                 </Button.ToolTip>
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr6.png" Height="70" Stretch="Fill" Width="90"/>
+                        <Image Source="r6.png" Height="70" Stretch="Fill" Width="90"/>
                     </ControlTemplate>
                 </Button.Template>
 
@@ -90,7 +90,7 @@
                 </Button.ToolTip>
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="C:\Users\PC\Desktop\Photos Web\Wpf img\cr5.png" Height="80" Width="100"/>
+                        <Image Source="cr5.png" Height="80" Width="100"/>
                     </ControlTemplate>
                 </Button.Template>
 

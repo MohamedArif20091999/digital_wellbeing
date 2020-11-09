@@ -89,6 +89,7 @@
     </ApplicationDefinition>
     <Compile Include="features.xaml.cs">
       <DependentUpon>features.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DbFailHandle.xaml.cs">
       <DependentUpon>DbFailHandle.xaml</DependentUpon>
     </Compile>
@@ -109,6 +110,9 @@
       <DependentUpon>WaterIntake.xaml</DependentUpon>
     </Compile>
     <Page Include="features.xaml">
+    <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="services\Dbconnection.cs" />
     <Compile Include="Utilities\PasswordAuth.cs" />
     <Page Include="DbFailHandle.xaml">
