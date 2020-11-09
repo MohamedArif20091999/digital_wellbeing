@@ -29,12 +29,14 @@ namespace Hack
 
         private void submitBtnClick(object sender, RoutedEventArgs e)
         {
-            int id=0;
+            Guid id=new Guid();
             String gender="default";
-            string date = dobBox.Text;
+            //string date = datePicker.Text;
+            string date = Convert.ToDateTime(datePicker.Text).ToString("yyyy-MM-dd");
+
             //DateTime Date = new DateTime(long.Parse(date));
-            Trace.WriteLine(DateTime.Parse(date));
-            Trace.WriteLine(date.GetType());
+            //Trace.WriteLine(DateTime.Parse(date));
+            //Trace.WriteLine(date.GetType());
             if (maleRadio.IsChecked == true) gender = maleRadio.Content.ToString();
             if (femaleRadio.IsChecked == true) gender = femaleRadio.Content.ToString();
             Trace.WriteLine(gender);
@@ -43,31 +45,41 @@ namespace Hack
             
             
             var userName = userNameLabel.Content.ToString();
-            String connString = DbConnection.Connect();
-            using (var conn = new NpgsqlConnection(connString))
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            using (var conn = new NpgsqlConnection(connect))
             {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT id FROM register WHERE name='" + userName.ToUpper() + "';", conn))
-                using (var reader = cmd.ExecuteReader())
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
+                try
+                {
+
+
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand("SELECT id FROM register WHERE name='" + userName.ToUpper() + "';", conn))
+                    using (var reader = cmd.ExecuteReader())
+                        if (reader.HasRows)
                         {
+                            while (reader.Read())
+                            {
 
-                            //int id = reader.GetInt32(0);
-                            id = reader.GetInt32(0);
-                            Trace.WriteLine(id);
-                           // reader.Close();
+                                //int id = reader.GetInt32(0);
+                               id = reader.GetGuid(0);
+                                Trace.WriteLine(id);
+                                // reader.Close();
+                            }
+                            reader.Close();
                         }
-                        reader.Close();
-                    }
 
-                var cmdInsert = new NpgsqlCommand("INSERT INTO personaldetails (id,gender,dob,weight) VALUES ("+id+",'"+gender+"','"+date+"',"+weight+");", conn);
-
-                cmdInsert.ExecuteNonQuery();
-                //Trace.WriteLine("Done!!");
-                
+                    var cmdInsert = new NpgsqlCommand("INSERT INTO personaldetails (id,gender,dob,weight) VALUES ('" + id + "','" + gender + "','" + date + "'," + weight + ");", conn);
+                    Trace.WriteLine(cmdInsert);
+                    cmdInsert.ExecuteNonQuery();
+                    //Trace.WriteLine("Done!!");
+                    conn.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
 
 
         }

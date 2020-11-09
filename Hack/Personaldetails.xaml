@@ -14,6 +14,7 @@
             <GradientStop Offset="0.6" Color="#a2ebe8"/>
         </LinearGradientBrush>
     </Window.Resources>
+
     <Grid>
         <TextBlock HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Height="60" Margin="38,29,0,0" TextWrapping="Wrap" Text="Help us to be more personalized!" VerticalAlignment="Top" Width="625"/>
         <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="36" Margin="55,168,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="137"/>
@@ -21,12 +22,15 @@
         <RadioButton x:Name="maleRadio" Content="Male" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="38" Margin="192,241,0,0" VerticalAlignment="Top" Width="97"/>
         <RadioButton x:Name="femaleRadio" Content="Female" HorizontalAlignment="Left" Height="36" FontSize="20" FontWeight="DemiBold" Margin="289,241,0,0" VerticalAlignment="Top" Width="96"/>
         <TextBlock HorizontalAlignment="Left" Height="34" Margin="24,294,0,0" TextWrapping="Wrap" FontSize="23" FontWeight="DemiBold" Text="     DOB:" VerticalAlignment="Top" Width="102"/>
-        <TextBox x:Name="dobBox" HorizontalAlignment="Left" Height="38" Margin="192,292,0,0" FontSize="15" FontWeight="DemiBold" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" RenderTransformOrigin="0.5,0.5"/>
-        
 
-         <TextBlock HorizontalAlignment="Left" FontSize="15" Height="34" Margin="374,298,0,0" TextWrapping="Wrap" Text="(YYYY-MM-DD)" VerticalAlignment="Top" Width="114"/>
+        <DatePicker  x:Name="datePicker"  Margin="194,297,175,241"/>
+
+
+
+
+
         <TextBlock HorizontalAlignment="Left" Margin="38,353,0,0" FontSize="23" FontWeight="DemiBold" TextWrapping="Wrap" Text="   Weight:" VerticalAlignment="Top" Height="50" Width="120"/>
-        <TextBox x:Name="weightBox" HorizontalAlignment="Left" Height="38" Margin="194,349,0,0" TextWrapping="Wrap" FontSize="15" FontWeight="DemiBold" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="weightBox" HorizontalAlignment="Left" Height="30" Margin="194,355,0,0" TextWrapping="Wrap" FontSize="15" FontWeight="DemiBold" Text="" VerticalAlignment="Top" Width="175"/>
         <Button x:Name="submitBtn" Click="submitBtnClick" Content="Submit" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="17" FontWeight="DemiBold" HorizontalAlignment="Left" Height="32" Margin="324,446,0,0" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="userNameLabel" Content="" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="49" Margin="197,165,0,0" VerticalAlignment="Top" Width="188"/>
 

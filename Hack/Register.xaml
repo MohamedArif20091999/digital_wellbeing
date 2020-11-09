@@ -40,6 +40,7 @@
             <PasswordBox x:Name="cpasswordBox" HorizontalAlignment="Left" Height="37" Margin="168,246,0,0" VerticalAlignment="Top" Width="250"/>
             <Button x:Name="submitButton" Content="Register" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="20" FontWeight="DemiBold" Click="submitBtn" HorizontalAlignment="Left" Height="38" Margin="301,314,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.599,0.403"/>
             <TextBlock HorizontalAlignment="Left" Height="54" Margin="44,76,0,0" TextWrapping="Wrap" FontSize="20" FontWeight="DemiBold" Text="Register for an account" VerticalAlignment="Top" Width="252"/>
+            <Label Foreground="red"  x:Name="notMatching1" Content="" FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Left" Height="57" Margin="20,301,0,0" VerticalAlignment="Top" Width="276"/>
 
 
 
