@@ -31,8 +31,8 @@ namespace Hack
 
         private void loginClick(object sender, RoutedEventArgs e)
         {
-            String connString = DbConnection.Connect();
-            using (var conn = new NpgsqlConnection(connString))
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            using (var conn = new NpgsqlConnection(connect))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT password FROM register WHERE name='" + user + "';", conn))

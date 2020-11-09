@@ -17,7 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Diagnostics;
-
+using Hack.services;
+using System.Configuration;
 
 namespace Hack
 {
@@ -28,27 +29,49 @@ namespace Hack
     {
         public MainWindow()
         {
-            InitializeComponent();
+
+            //Dbservice.connection();
            
+            Dbconnection.Connect();
+            Trace.WriteLine("connection succeeded");
+            InitializeComponent();
+          
+
         }
 
-      
+
         private void registerClick(object sender, RoutedEventArgs e)
         {
-            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
-          //  Trace.WriteLine(userName);
-            Register register = new Register(userName);
-            register.Show();
-            this.Close();
+            try
+            {
+                string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                //  Trace.WriteLine(userName);
+                Register register = new Register(userName);
+                register.Show();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
           
         }
 
         private void loginClick(object sender, RoutedEventArgs e)
         {
-            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
-            Login login = new Login(userName);
-            login.Show();
-            this.Close();
+            try
+            {
+                string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                Login login = new Login(userName);
+                login.Show();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }
