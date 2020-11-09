@@ -16,7 +16,6 @@
         </Grid.Background>
 
         <TextBox HorizontalAlignment="Left" Height="30" Margin="28,33,0,0" TextWrapping="Wrap" Text="Hello" VerticalAlignment="Top" Width="54" FontSize="18" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="91,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" FontSize="18" Background="{x:Null}"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="28,68,0,0" TextWrapping="Wrap" Text="Switch to your destined!" VerticalAlignment="Top" Width="217" FontSize="18" Background="{x:Null}"/>
         <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
         <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14">
@@ -97,5 +96,6 @@
 
             </Button>
         </StackPanel>
+        <Label x:Name="namelbl" Content="" HorizontalAlignment="Left" Margin="87,33,0,0" VerticalAlignment="Top" Width="158" Height="30" FontSize="18"/>
     </Grid>
 </Window>

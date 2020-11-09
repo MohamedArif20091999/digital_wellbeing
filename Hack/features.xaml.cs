@@ -21,13 +21,14 @@ namespace Hack
     /// </summary>
     public partial class features : Window
     {
-        public features()
-        {
-            InitializeComponent();
-        }
+
+        string uname = "AB";
         public features(string username)
         {
+            
             InitializeComponent();
+            uname = username;
+            namelbl.Content = uname+"!";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,6 +58,11 @@ namespace Hack
         }
 
         private void signout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

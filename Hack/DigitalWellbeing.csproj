@@ -98,6 +98,9 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReportDaily.xaml.cs">
+      <DependentUpon>ReportDaily.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WaterIntake.xaml.cs">
       <DependentUpon>WaterIntake.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportDaily.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,16 +188,7 @@
     <Resource Include="Image6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Cr1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="cr3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="cr4.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="cr5.png" />
@@ -202,9 +200,6 @@
     <Resource Include="Image8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Untitled.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image9.png" />
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +207,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="cr8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="cr9.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="cr10.png" />

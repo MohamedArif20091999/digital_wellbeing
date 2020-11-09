@@ -152,8 +152,9 @@ namespace Hack
                                     */
 
                                     //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
-                                    features fts = new features();
+                                    features fts = new features(usernamesmall);
                                     //usertext.Text = userName;
+                                    
                                     fts.Show();
                                     this.Close();
                                     //---------------------------------

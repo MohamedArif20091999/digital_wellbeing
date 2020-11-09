@@ -62,7 +62,8 @@ namespace Hack
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            features fts = new features();
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+            features fts = new features(userName);
             fts.Show();
             this.Close();
         }
