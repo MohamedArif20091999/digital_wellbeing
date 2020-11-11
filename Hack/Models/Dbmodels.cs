@@ -41,12 +41,22 @@ namespace Hack.Models
             using (var conn = new NpgsqlConnection(connec))
             {
                 conn.Open();
-                var cmdpd = new NpgsqlCommand("CREATE TABLE personaldetails (id uuid,gender TEXT NOT NULL,dob DATE NOT NULL,weight INT NOT NULL);",conn);
+                var cmdpd = new NpgsqlCommand("CREATE TABLE personaldetails (id uuid,gender TEXT NOT NULL,dob DATE NOT NULL,weight INT NOT NULL);", conn);
                 cmdpd.ExecuteNonQuery();
                 Trace.WriteLine("table ready!!");
                 conn.Close();
 
-               
+
+            }
+            var connection = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+            using (var conn = new NpgsqlConnection(connection))
+            {
+                conn.Open();
+                var cmdpd = new NpgsqlCommand("CREATE TABLE waterintake (activity text, workpm integer);", conn);
+                cmdpd.ExecuteNonQuery();
+                Trace.WriteLine("table ready!!");
+                conn.Close();
             }
         }
     }

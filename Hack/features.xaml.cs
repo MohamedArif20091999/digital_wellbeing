@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Npgsql;
 using System.Data;
+using System.Diagnostics;
 
 namespace Hack
 {
@@ -39,25 +40,49 @@ namespace Hack
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WaterIntake wi = new WaterIntake();
-            var connStr = "Host=localhost;Username=postgres;Password=123;Database=hackathon";
-            NpgsqlConnection conn = new NpgsqlConnection(connStr);
-            try
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            Trace.WriteLine(connect);
+
+            using (var conn = new NpgsqlConnection(connect))
             {
-                conn.Open();
-                string query = "SELECT * FROM activity";
-                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                try
                 {
-                    string name = dr.GetString(0);
-                    wi.activitydd.Items.Add(name);
+                    conn.Open();
+                    //Trace.WriteLine("connection opened!!");
+                    string query = "INSERT INTO waterintake(activity,workpm) VALUES('sedentary',1);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('light activity',20);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('moderately active',60);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('highly active',100);";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    using (var reader = cmd.ExecuteReader())
+                    conn.Close();
                 }
-                conn.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM waterintake";
+
+                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                    NpgsqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        string name = dr.GetString(0);
+                        wi.activitydd.Items.Add(name);
+                    }
+
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+    
             wi.Show();
             this.Close();
         }
@@ -81,8 +106,9 @@ namespace Hack
 
         private void profile_Click(object sender, RoutedEventArgs e)
         {
+            string id = "";
             Profile profile = new Profile(uname);
-            /*var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
             using (var conn = new NpgsqlConnection(connect))
             {
@@ -91,24 +117,38 @@ namespace Hack
                     conn.Open();
                     //Trace.WriteLine("connection opened!!");
 
-                    using (var cmd = new NpgsqlCommand("SELECT * FROM register WHERE name='" + uname + "';", conn))
+                    using (var cmd = new NpgsqlCommand("SELECT id FROM register;", conn))
                     using (var reader = cmd.ExecuteReader())
-                       while (reader.Read())
+                        while (reader.Read())
+                        {
+                            id = (reader.GetGuid(0)).ToString();
+                        }
+                    conn.Close();
+
+                    conn.Open();
+                    //String name = reader.GetString(1);
+                    using (var cmd1 = new NpgsqlCommand("SELECT id,gender,dob,weight FROM personaldetails;", conn))
+                    using (var reader1 = cmd1.ExecuteReader())
+                        while (reader1.Read())
+                        {
+                            string perid = (reader1.GetGuid(0)).ToString();
+                            string gend = reader1.GetString(1);
+                            var dob = reader1.GetDate(2);
+                            int weight = reader1.GetInt32(3);
+                            if (id == perid)
                             {
-                                Guid id = reader.GetGuid(0);
-                                String name = reader.GetString(1);
-                                {
-                                    if ()
-                                    {
-
-
-                                    }
-                                }
+                                profile.gender.Content = gend;
+                                profile.dob.Content = dob;
+                                profile.weight.Text = weight.ToString();
                             }
-                        }catch(Exception ex)
+                        }
+                    conn.Close();
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }*/
+                }
+            }
                 
                 
             profile.Show();

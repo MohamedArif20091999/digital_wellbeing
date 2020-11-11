@@ -19,11 +19,15 @@ namespace Hack
     /// </summary>
     public partial class Profile : Window
     {
-        public Profile()
+        string proname = "";
+        public Profile(string uname)
         {
             InitializeComponent();
+            proname = uname;
+            pname.Content = proname;
         }
 
+        
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 

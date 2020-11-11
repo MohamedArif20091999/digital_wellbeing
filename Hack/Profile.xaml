@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Profile" Height="450" Width="800">
     <Grid>
         <Grid.Background>
@@ -14,13 +15,15 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label Content="Profile" HorizontalAlignment="Left" Margin="39,39,0,0" VerticalAlignment="Top" Width="81" FontSize="20" Height="39"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="223,114,0,0" VerticalAlignment="Top" Height="35" Width="66" FontSize="18"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="380,114,0,0" VerticalAlignment="Top" Width="150" Height="38" FontSize="18"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="223,174,0,0" VerticalAlignment="Top" Width="81" Height="37" FontSize="18"/>
-        <Label Content="DOB" HorizontalAlignment="Left" Margin="223,242,0,0" VerticalAlignment="Top" Width="81" FontSize="18" Height="37"/>
-        <Label Content="Weight" HorizontalAlignment="Left" Margin="223,307,0,0" VerticalAlignment="Top" Width="101" FontSize="18" Height="39"/>
-        <TextBox HorizontalAlignment="Left" Height="39" Margin="380,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="18"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,351,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="632,351,0,0" VerticalAlignment="Top" Width="77" FontSize="18" Height="30"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="251,116,0,0" VerticalAlignment="Top" Height="35" Width="66" FontSize="18"/>
+        <Label x:Name="pname" Content="" HorizontalAlignment="Left" Margin="408,116,0,0" VerticalAlignment="Top" Width="150" Height="38" FontSize="18"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="251,176,0,0" VerticalAlignment="Top" Width="81" Height="37" FontSize="18"/>
+        <Label Content="DOB" HorizontalAlignment="Left" Margin="251,244,0,0" VerticalAlignment="Top" Width="81" FontSize="18" Height="37"/>
+        <Label Content="Weight" HorizontalAlignment="Left" Margin="251,309,0,0" VerticalAlignment="Top" Width="101" FontSize="18" Height="35"/>
+        <TextBox x:Name="weight" HorizontalAlignment="Left" Height="35" Margin="408,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Edit Weight" HorizontalAlignment="Left" Margin="589,314,0,0" VerticalAlignment="Top" Width="80" Height="26" FontSize="14"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="368,366,0,0" VerticalAlignment="Top" Width="77" FontSize="18" Height="30"/>
+        <Label x:Name="gender" Content="" HorizontalAlignment="Left" Margin="408,176,0,0" VerticalAlignment="Top" Width="150" Height="37" FontSize="18"/>
+        <Label x:Name="dob" Content="" HorizontalAlignment="Left" Margin="408,244,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
     </Grid>
 </Window>
