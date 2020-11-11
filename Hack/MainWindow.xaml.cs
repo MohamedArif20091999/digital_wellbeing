@@ -34,11 +34,30 @@ namespace Hack
            
             Dbconnection.Connect();
             Trace.WriteLine("connection succeeded");
+            /*Thread t2 = new Thread(delegate ()
+            {
+                checkTime();
+            });
+            t2.Start();*/
             InitializeComponent();
-          
-
         }
 
+        /*private void checkTime()
+        {
+            
+            while (true)
+            {
+
+                string time = DateTime.Now.ToString("hh:mm");
+                Thread.Sleep(1000);
+                if (time == "01.05")
+                {
+                    MessageBox.Show("Its time for your lunch!");
+                    break;
+                }
+            }
+            
+        }*/
 
         private void registerClick(object sender, RoutedEventArgs e)
         {

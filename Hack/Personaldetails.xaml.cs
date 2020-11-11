@@ -73,6 +73,9 @@ namespace Hack
                     cmdInsert.ExecuteNonQuery();
                     //Trace.WriteLine("Done!!");
                     conn.Close();
+                    features fts = new features();
+                    fts.Show();
+                    this.Close();
                 }
                 catch(Exception ex)
                 {

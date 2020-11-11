@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Controls.DataVisualization.Charting;
 
 namespace Hack
 {
@@ -22,6 +23,19 @@ namespace Hack
         public ReportDaily()
         {
             InitializeComponent();
+        }
+        
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ((ColumnSeries)mcChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]{
+            new KeyValuePair<string, int>("Project Manager", 12),
+            new KeyValuePair<string, int>("CEO", 25),
+            new KeyValuePair<string, int>("Software Engg.", 5),
+            new KeyValuePair<string, int>("Team Leader", 6),
+            new KeyValuePair<string, int>("Project Leader", 10),
+            new KeyValuePair<string, int>("Developer", 4) };
         }
     }
 }

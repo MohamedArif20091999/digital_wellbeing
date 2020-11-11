@@ -22,7 +22,12 @@ namespace Hack
     public partial class features : Window
     {
 
-        string uname = "AB";
+        public features()
+        {
+
+            InitializeComponent();
+        }
+            string uname = "";
         public features(string username)
         {
             
@@ -64,6 +69,50 @@ namespace Hack
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ReportDaily rd = new ReportDaily();
+            rd.Show();
+            this.Close();
+        }
+
+        private void profile_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile(uname);
+            /*var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+            using (var conn = new NpgsqlConnection(connect))
+            {
+                try
+                {
+                    conn.Open();
+                    //Trace.WriteLine("connection opened!!");
+
+                    using (var cmd = new NpgsqlCommand("SELECT * FROM register WHERE name='" + uname + "';", conn))
+                    using (var reader = cmd.ExecuteReader())
+                       while (reader.Read())
+                            {
+                                Guid id = reader.GetGuid(0);
+                                String name = reader.GetString(1);
+                                {
+                                    if ()
+                                    {
+
+
+                                    }
+                                }
+                            }
+                        }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }*/
+                
+                
+            profile.Show();
+            this.Close();
 
         }
     }

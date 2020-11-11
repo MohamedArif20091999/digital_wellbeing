@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Personaldetails" Height="550" Width="680" Background="{DynamicResource windowbackground}" >
+        Title="Personaldetails" Height="500" Width="680" Background="{DynamicResource windowbackground}" >
 
     <Window.Resources>
         <LinearGradientBrush x:Key="windowbackground">
@@ -17,22 +17,22 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Height="60" Margin="38,29,0,0" TextWrapping="Wrap" Text="Help us to be more personalized!" VerticalAlignment="Top" Width="625"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="36" Margin="55,168,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="137"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="38" Margin="30,233,0,0" TextWrapping="Wrap" Text="    Gender:" VerticalAlignment="Top" Width="120"/>
-        <RadioButton x:Name="maleRadio" Content="Male" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="38" Margin="192,241,0,0" VerticalAlignment="Top" Width="97"/>
-        <RadioButton x:Name="femaleRadio" Content="Female" HorizontalAlignment="Left" Height="36" FontSize="20" FontWeight="DemiBold" Margin="289,241,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBlock HorizontalAlignment="Left" Height="34" Margin="24,294,0,0" TextWrapping="Wrap" FontSize="23" FontWeight="DemiBold" Text="     DOB:" VerticalAlignment="Top" Width="102"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="36" Margin="67,126,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="137"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="38" Margin="67,191,0,0" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Top" Width="95"/>
+        <RadioButton x:Name="maleRadio" Content="Male" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="30" Margin="204,199,0,0" VerticalAlignment="Top" Width="76"/>
+        <RadioButton x:Name="femaleRadio" Content="Female" HorizontalAlignment="Left" Height="30" FontSize="20" FontWeight="DemiBold" Margin="301,199,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="67,252,0,0" TextWrapping="Wrap" FontSize="23" FontWeight="DemiBold" Text="DOB:" VerticalAlignment="Top" Width="71"/>
 
-        <DatePicker  x:Name="datePicker"  Margin="194,297,175,191"/>
-
-
+        <DatePicker  x:Name="datePicker"  Margin="206,255,275,183"/>
 
 
 
-        <TextBlock HorizontalAlignment="Left" Margin="38,353,0,0" FontSize="23" FontWeight="DemiBold" TextWrapping="Wrap" Text="   Weight:" VerticalAlignment="Top" Height="50" Width="120"/>
-        <TextBox x:Name="weightBox" HorizontalAlignment="Left" Height="30" Margin="194,355,0,0" TextWrapping="Wrap" FontSize="15" FontWeight="DemiBold" Text="" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="submitBtn" Click="submitBtnClick" Content="Submit" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="17" FontWeight="DemiBold" HorizontalAlignment="Left" Height="32" Margin="324,446,0,0" VerticalAlignment="Top" Width="110"/>
-        <Label x:Name="userNameLabel" Content="" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="49" Margin="197,165,0,0" VerticalAlignment="Top" Width="188"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="67,311,0,0" FontSize="23" FontWeight="DemiBold" TextWrapping="Wrap" Text="Weight:" VerticalAlignment="Top" Height="32" Width="95"/>
+        <TextBox x:Name="weightBox" HorizontalAlignment="Left" Height="30" Margin="206,313,0,0" TextWrapping="Wrap" FontSize="15" FontWeight="DemiBold" Text="" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="submitBtn" Click="submitBtnClick" Content="Submit" BorderBrush="#70f3a9"  BorderThickness="1" FontSize="17" FontWeight="DemiBold" HorizontalAlignment="Left" Height="32" Margin="386,382,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="userNameLabel" Content="" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Left" Height="36" Margin="209,126,0,0" VerticalAlignment="Top" Width="188"/>
 
     </Grid>
 </Window>

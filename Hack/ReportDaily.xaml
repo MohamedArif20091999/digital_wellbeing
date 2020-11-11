@@ -3,10 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
-        Title="ReportDaily" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="ReportDaily" Height="450" Width="700">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="419*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart"
+           Background="LightSteelBlue" Margin="148,109,176,40">
+            <DVC:Chart.Series>
+                <DVC:ColumnSeries Title="Years" BorderBrush="Pink"                  
+                    IndependentValueBinding="{Binding Path=Key}"
+                    DependentValueBinding="{Binding Path=Value}" Margin="0,-6,3,4">
+                </DVC:ColumnSeries>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+
+        <Button Content="Button" HorizontalAlignment="Left" Margin="61,38,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
     </Grid>
 </Window>

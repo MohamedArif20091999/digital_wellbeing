@@ -14,9 +14,6 @@
                 <GradientStop Color="#FF70F3A9" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="28,33,0,0" TextWrapping="Wrap" Text="Hello" VerticalAlignment="Top" Width="54" FontSize="18" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="28,68,0,0" TextWrapping="Wrap" Text="Switch to your destined!" VerticalAlignment="Top" Width="217" FontSize="18" Background="{x:Null}"/>
         <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
         <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14">
         </Button>
@@ -82,7 +79,7 @@
             </Button>
         </StackPanel>
         <StackPanel Margin="499,160,96,175">
-            <Button Height="82" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+            <Button Height="82" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0" Click="Button_Click_1">
                 <Button.ToolTip>
                     <ToolTip>
                         Report
@@ -96,6 +93,8 @@
 
             </Button>
         </StackPanel>
-        <Label x:Name="namelbl" Content="" HorizontalAlignment="Left" Margin="87,33,0,0" VerticalAlignment="Top" Width="158" Height="30" FontSize="18"/>
+        <Label x:Name="namelbl" Content="" HorizontalAlignment="Left" Margin="87,24,0,0" VerticalAlignment="Top" Width="158" Height="34" FontSize="18"/>
+        <Label Content="Hello" HorizontalAlignment="Left" Margin="28,24,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Switch to your destined!" HorizontalAlignment="Left" Margin="28,63,0,0" VerticalAlignment="Top" Width="217" FontSize="18" Height="35"/>
     </Grid>
 </Window>
