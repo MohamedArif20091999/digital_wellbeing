@@ -7,14 +7,17 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFA7EBEF" Offset="0"/>
+            <GradientStop Color="#FF70F3A9" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFA7EBEF" Offset="0"/>
-                <GradientStop Color="#FF70F3A9" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="Background.jpg" Stretch="UniformToFill" Opacity="0.1"/>
         </Grid.Background>
-        <Button Content="Sign up / Login" HorizontalAlignment="Left" Height="41" Margin="309,241,0,0" VerticalAlignment="Top" Width="145" Click="registerClick" FontSize="18" Background="White"/>
+        <Button Content="Sign up / Login" HorizontalAlignment="Left" Height="41" Margin="331,233,0,0" VerticalAlignment="Top" Width="145" Click="registerClick" FontSize="18" Background="White"/>
 
     </Grid>
 </Window>

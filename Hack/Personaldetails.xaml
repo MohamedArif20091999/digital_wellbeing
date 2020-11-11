@@ -6,16 +6,25 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Personaldetails" Height="500" Width="680" Background="{DynamicResource windowbackground}" >
+        Title="Personaldetails" Height="500" Width="650" >
 
     <Window.Resources>
         <LinearGradientBrush x:Key="windowbackground">
-            <GradientStop Offset="0.1" Color="#70f3a9" />
-            <GradientStop Offset="0.6" Color="#a2ebe8"/>
+            <GradientStop Color="#FFA7EBEF" Offset="0"/>
+            <GradientStop Color="#FF70F3A9" Offset="1"/>
         </LinearGradientBrush>
     </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#70f3a9" Offset="0.9"/>
+            <GradientStop Color="#a2ebe8" Offset="0.363"/>
+        </LinearGradientBrush>
+    </Window.Background>
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Background.jpg" Stretch="UniformToFill" Opacity="0.05"/>
+        </Grid.Background>
         <TextBlock HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Height="60" Margin="38,29,0,0" TextWrapping="Wrap" Text="Help us to be more personalized!" VerticalAlignment="Top" Width="625"/>
         <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="36" Margin="67,126,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="137"/>
         <TextBlock HorizontalAlignment="Left" FontSize="23" FontWeight="DemiBold" Height="38" Margin="67,191,0,0" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Top" Width="95"/>

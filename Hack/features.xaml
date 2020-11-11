@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="features" MaxHeight="450" MaxWidth="700">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFA7EBEF" Offset="0"/>
+            <GradientStop Color="#FF70F3A9" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid >
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFA7EBEF" Offset="0"/>
-                <GradientStop Color="#FF70F3A9" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="Background.jpg" Stretch="UniformToFill" Opacity="0.04"/>
         </Grid.Background>
         <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
         <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14" Click="profile_Click">
