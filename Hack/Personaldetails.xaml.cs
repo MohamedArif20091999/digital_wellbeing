@@ -29,7 +29,7 @@ namespace Hack
 
         private void submitBtnClick(object sender, RoutedEventArgs e)
         {
-            Guid id=new Guid();
+            String id="default";
             String gender="default";
             //string date = datePicker.Text;
             string date = Convert.ToDateTime(datePicker.Text).ToString("yyyy-MM-dd");
@@ -61,7 +61,7 @@ namespace Hack
                             {
 
                                 //int id = reader.GetInt32(0);
-                               id = reader.GetGuid(0);
+                               id = reader.GetString(0);
                                 Trace.WriteLine(id);
                                 // reader.Close();
                             }
