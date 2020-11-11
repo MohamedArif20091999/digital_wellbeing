@@ -93,6 +93,7 @@
     <Compile Include="DbFailHandle.xaml.cs">
       <DependentUpon>DbFailHandle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frequentalert.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -110,7 +111,7 @@
       <DependentUpon>WaterIntake.xaml</DependentUpon>
     </Compile>
     <Page Include="features.xaml">
-    <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="services\Dbconnection.cs" />

@@ -33,12 +33,20 @@ namespace Hack
             //Dbservice.connection();
            
             Dbconnection.Connect();
+          //  checkTime();
+            Thread t2 = new Thread(delegate ()
+            {
+                Thread.CurrentThread.IsBackground = true;
+                Frequentalert.checkTime();
+            });
+            t2.Start();
             Trace.WriteLine("connection succeeded");
             InitializeComponent();
           
 
         }
 
+          
 
         private void registerClick(object sender, RoutedEventArgs e)
         {

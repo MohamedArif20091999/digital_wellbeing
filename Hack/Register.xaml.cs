@@ -49,6 +49,9 @@ namespace Hack
             String cpassword = cpasswordBox.Password.ToString();
             Trace.WriteLine(cpasswordBox.Password.ToString());
 
+            String id = System.Guid.NewGuid().ToString();
+            Console.WriteLine(id);
+
             var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
             using (var conn = new NpgsqlConnection(connect))
@@ -64,7 +67,7 @@ namespace Hack
                         {
                             while (reader.Read())
                             {
-                                Guid id = reader.GetGuid(0);
+                               // Guid id = reader.GetGuid(0);
                                 String name = reader.GetString(1);
                                 {
                                     if (Username == name)
@@ -106,7 +109,7 @@ namespace Hack
                                 String encryptedPassword = PasswordAuth.EncryptString(password);
                                 Trace.WriteLine(encryptedPassword);
 
-                                var cmdInsert = new NpgsqlCommand("INSERT INTO register (name,password) VALUES ('" + Username + "','" + encryptedPassword + "');", conn);
+                                var cmdInsert = new NpgsqlCommand("INSERT INTO register (id,name,password) VALUES ('" + id + "','" + Username + "','" + encryptedPassword + "');", conn);
 
 
                                 cmdInsert.ExecuteNonQuery();

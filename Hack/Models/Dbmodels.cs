@@ -30,7 +30,7 @@ namespace Hack.Models
             using (var conn = new NpgsqlConnection(connect))
             {
                 conn.Open();
-                var cmdCTb = new NpgsqlCommand("CREATE TABLE register (id uuid DEFAULT uuid_generate_v4 (),name TEXT NOT NULL,password TEXT NOT NULL,PRIMARY KEY (id));", conn);
+                var cmdCTb = new NpgsqlCommand("CREATE TABLE register (id TEXT NOT NULL,name TEXT NOT NULL,password TEXT NOT NULL,PRIMARY KEY (id));", conn);
                 // var pdTable = new NpgsqlCommand("CREATE TABLE personaldetails (id TEXT,gender TEXT NOT NULL,dob DATE NOT NULL,weight INT NOT NULL)");
                 cmdCTb.ExecuteNonQuery();
                 Trace.WriteLine("table ready!!");
@@ -41,7 +41,7 @@ namespace Hack.Models
             using (var conn = new NpgsqlConnection(connec))
             {
                 conn.Open();
-                var cmdpd = new NpgsqlCommand("CREATE TABLE personaldetails (id uuid,gender TEXT NOT NULL,dob DATE NOT NULL,weight INT NOT NULL);",conn);
+                var cmdpd = new NpgsqlCommand("CREATE TABLE personaldetails (id TEXT NOT NULL,gender TEXT NOT NULL,dob DATE NOT NULL,weight INT NOT NULL);",conn);
                 cmdpd.ExecuteNonQuery();
                 Trace.WriteLine("table ready!!");
                 conn.Close();
