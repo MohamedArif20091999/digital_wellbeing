@@ -7,23 +7,35 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ReportDaily" Height="450" Width="700">
+        Title="ReportDaily" Height="500" Width="650">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA7EBEF" Offset="0"/>
+                <GradientStop Color="#FF70F3A9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="419*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart"
-           Background="LightSteelBlue" Margin="148,109,176,40">
+           Background="#BFF4E7"  Margin="148,127,126,75">
             <DVC:Chart.Series>
-                <DVC:ColumnSeries Title="Years" BorderBrush="Pink"                  
+                <DVC:ColumnSeries Title="Percentage" Opacity="1" BorderBrush="Pink"                  
                     IndependentValueBinding="{Binding Path=Key}"
-                    DependentValueBinding="{Binding Path=Value}" Margin="0,-6,3,4">
+                    DependentValueBinding="{Binding Path=Value}" Margin="0,0,0,0">
                 </DVC:ColumnSeries>
             </DVC:Chart.Series>
         </DVC:Chart>
-
-        <Button Content="Button" HorizontalAlignment="Left" Margin="61,38,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+        <Label Content="Report" HorizontalAlignment="Left" Margin="23,22,0,0" VerticalAlignment="Top" Width="79" FontSize="16" Height="38"/>
+        <Button Content="Daily" HorizontalAlignment="Left" Margin="148,59,0,0" VerticalAlignment="Top" Width="72" FontSize="14" Height="25" Click="Button_Click_1"/>
+        <Button Content="Weekly" HorizontalAlignment="Left" Margin="299,59,0,0" VerticalAlignment="Top" Width="75" Height="25" FontSize="14"/>
+        <Button Content="Monthly" HorizontalAlignment="Left" Margin="440,59,0,0" VerticalAlignment="Top" Width="76" Height="25" FontSize="14"/>
+        <GridSplitter HorizontalAlignment="Left" Height="23" Margin="559,15,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
+        <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="507,18,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" Click="profile_Click"/>
+        <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="565,18,0,0" VerticalAlignment="Top" Width="62" BorderThickness="0" Background="{x:Null}"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="296,419,0,0" VerticalAlignment="Top" Width="75" Height="22" FontSize="14" Click="Button_Click_2"/>
     </Grid>
 </Window>

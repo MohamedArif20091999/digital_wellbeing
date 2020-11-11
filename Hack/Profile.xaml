@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Profile" Height="450" Width="800">
+        Title="Profile" Height="430" Width="650">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,15 +15,22 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label Content="Profile" HorizontalAlignment="Left" Margin="39,39,0,0" VerticalAlignment="Top" Width="81" FontSize="20" Height="39"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="251,116,0,0" VerticalAlignment="Top" Height="35" Width="66" FontSize="18"/>
-        <Label x:Name="pname" Content="" HorizontalAlignment="Left" Margin="408,116,0,0" VerticalAlignment="Top" Width="150" Height="38" FontSize="18"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="251,176,0,0" VerticalAlignment="Top" Width="81" Height="37" FontSize="18"/>
-        <Label Content="DOB" HorizontalAlignment="Left" Margin="251,244,0,0" VerticalAlignment="Top" Width="81" FontSize="18" Height="37"/>
-        <Label Content="Weight" HorizontalAlignment="Left" Margin="251,309,0,0" VerticalAlignment="Top" Width="101" FontSize="18" Height="35"/>
-        <TextBox x:Name="weight" HorizontalAlignment="Left" Height="35" Margin="408,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="18" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Edit Weight" HorizontalAlignment="Left" Margin="589,314,0,0" VerticalAlignment="Top" Width="80" Height="26" FontSize="14"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="368,366,0,0" VerticalAlignment="Top" Width="77" FontSize="18" Height="30"/>
-        <Label x:Name="gender" Content="" HorizontalAlignment="Left" Margin="408,176,0,0" VerticalAlignment="Top" Width="150" Height="37" FontSize="18"/>
-        <Label x:Name="dob" Content="" HorizontalAlignment="Left" Margin="408,244,0,0" VerticalAlignment="Top" Height="37" Width="150" FontSize="18"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="139,89,0,0" VerticalAlignment="Top" Height="35" Width="66" FontSize="18"/>
+        <Label x:Name="pname" Content="" HorizontalAlignment="Left" Margin="296,89,0,0" VerticalAlignment="Top" Width="150" Height="30" FontSize="18" Background="White"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="139,149,0,0" VerticalAlignment="Top" Width="81" Height="37" FontSize="18"/>
+        <Label Content="DOB" HorizontalAlignment="Left" Margin="139,206,0,0" VerticalAlignment="Top" Width="81" FontSize="18" Height="37"/>
+        <Label Content="Weight" HorizontalAlignment="Left" Margin="139,263,0,0" VerticalAlignment="Top" Width="101" FontSize="18" Height="35"/>
+        <TextBox x:Name="weight" Cursor="Arrow" HorizontalAlignment="Left" IsReadOnly="False" Height="30" Margin="296,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Edit Weight" Cursor="Hand" HorizontalAlignment="Left" Margin="461,272,0,0" VerticalAlignment="Top" Width="80" Height="26" FontSize="14" Click="Button_Click"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="307,332,0,0" VerticalAlignment="Top" Width="67" FontSize="18" Height="25" Click="Button_Click_1">
+            <Button.ToolTip>
+                <ToolTip>
+                    Directs to Features
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Label x:Name="gender" Content="" HorizontalAlignment="Left" Margin="296,149,0,0" VerticalAlignment="Top" Width="150" Height="30" FontSize="18" Background="White"/>
+        <Label x:Name="dob" Content="" HorizontalAlignment="Left" Margin="296,206,0,0" VerticalAlignment="Top" Height="30" Width="150" FontSize="18" Background="White"/>
+        <Button x:Name="updatebt" Content="Update" HorizontalAlignment="Left" Margin="307,332,0,0" VerticalAlignment="Top" Width="67" Height="25" FontSize="14" Click="Button_Click_3"/>
     </Grid>
 </Window>

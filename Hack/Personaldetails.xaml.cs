@@ -21,10 +21,12 @@ namespace Hack
     /// </summary>
     public partial class Personaldetails : Window
     {
+        string pername = "";
         public Personaldetails(string username)
         {
             InitializeComponent();
             userNameLabel.Content = username;
+            pername = username;
         }
 
         private void submitBtnClick(object sender, RoutedEventArgs e)
@@ -73,7 +75,7 @@ namespace Hack
                     cmdInsert.ExecuteNonQuery();
                     //Trace.WriteLine("Done!!");
                     conn.Close();
-                    features fts = new features();
+                    features fts = new features(pername);
                     fts.Show();
                     this.Close();
                 }

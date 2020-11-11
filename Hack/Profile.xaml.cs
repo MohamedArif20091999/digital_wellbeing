@@ -10,6 +10,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Npgsql;
+using System.Data;
 using System.Windows.Shapes;
 
 namespace Hack
@@ -25,12 +27,51 @@ namespace Hack
             InitializeComponent();
             proname = uname;
             pname.Content = proname;
+            updatebt.Visibility = Visibility.Hidden;
         }
 
         
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            weight.Text = "";
+            updatebt.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            features fts = new features(proname);
+            fts.Show();
+            this.Close();
+        }
+
+        
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+            using (var conn = new NpgsqlConnection(connect))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE personaldetails SET weight='" + weight.Text.ToString() + "';";
+                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                    NpgsqlDataReader dr = cmd.ExecuteReader();
+                    MessageBox.Show("Updated!");
+                    updatebt.Visibility = Visibility.Hidden;
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

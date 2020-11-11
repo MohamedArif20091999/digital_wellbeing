@@ -21,9 +21,11 @@ namespace Hack
     /// </summary>
     public partial class WaterIntake : Window
     {
-        public WaterIntake()
+        string proname = "";
+        public WaterIntake(string uname)
         {
             InitializeComponent();
+            proname = uname;
             comment.Visibility = Visibility.Hidden;
             cups.Visibility = Visibility.Hidden;
         }
@@ -65,6 +67,58 @@ namespace Hack
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
             features fts = new features(userName);
             fts.Show();
+            this.Close();
+        }
+
+        private void profile_Click(object sender, RoutedEventArgs e)
+        {
+            string id = "";
+            Profile profile = new Profile(proname);
+            profile.pname.Content = proname;
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+            using (var conn = new NpgsqlConnection(connect))
+            {
+                try
+                {
+                    conn.Open();
+                    //Trace.WriteLine("connection opened!!");
+
+                    using (var cmd = new NpgsqlCommand("SELECT id FROM register;", conn))
+                    using (var reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            id = (reader.GetString(0));
+                        }
+                    conn.Close();
+
+                    conn.Open();
+                    //String name = reader.GetString(1);
+                    using (var cmd1 = new NpgsqlCommand("SELECT id,gender,dob,weight FROM personaldetails;", conn))
+                    using (var reader1 = cmd1.ExecuteReader())
+                        while (reader1.Read())
+                        {
+                            string perid = reader1.GetString(0);
+                            string gend = reader1.GetString(1);
+                            var dob = reader1.GetDate(2);
+                            int weight = reader1.GetInt32(3);
+                            if (id == perid)
+                            {
+                                profile.gender.Content = gend;
+                                profile.dob.Content = dob;
+                                profile.weight.Text = weight.ToString();
+                            }
+                        }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+
+            profile.Show();
             this.Close();
         }
     }

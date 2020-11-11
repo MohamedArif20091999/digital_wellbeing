@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Npgsql;
 using System.Data;
 using System.Diagnostics;
+using System.Windows.Controls.DataVisualization.Charting;
+using NpgsqlTypes;
 
 namespace Hack
 {
@@ -23,12 +25,8 @@ namespace Hack
     public partial class features : Window
     {
 
-        public features()
-        {
-
-            InitializeComponent();
-        }
-            string uname = "";
+        
+        string uname = "";
         public features(string username)
         {
             
@@ -36,10 +34,10 @@ namespace Hack
             uname = username;
             namelbl.Content = uname+"!";
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            WaterIntake wi = new WaterIntake();
+            WaterIntake wi = new WaterIntake(uname);
             var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
             Trace.WriteLine(connect);
 
@@ -62,7 +60,11 @@ namespace Hack
                     MessageBox.Show(ex.Message);
                 }
 
-                try
+                wi.activitydd.Items.Add("sedentary");
+                wi.activitydd.Items.Add("light activity");
+                wi.activitydd.Items.Add("moderately active");
+                wi.activitydd.Items.Add("highly active");
+                /*try
                 {
                     conn.Open();
                     string query = "SELECT * FROM waterintake";
@@ -80,9 +82,9 @@ namespace Hack
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
+                }*/
             }
-    
+
             wi.Show();
             this.Close();
         }
@@ -99,7 +101,14 @@ namespace Hack
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ReportDaily rd = new ReportDaily();
+            ReportDaily rd = new ReportDaily(uname);
+            ((ColumnSeries)rd.mcChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]{
+            new KeyValuePair<string, int>("Nov 1", 60),
+            new KeyValuePair<string, int>("Nov 2", 100),
+            new KeyValuePair<string, int>("Nov 3", 75),
+            new KeyValuePair<string, int>("Nov 4", 50),
+            new KeyValuePair<string, int>("Nov 5", 25),
+            };
             rd.Show();
             this.Close();
         }
@@ -108,6 +117,7 @@ namespace Hack
         {
             string id = "";
             Profile profile = new Profile(uname);
+            profile.pname.Content = uname;
             var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
             using (var conn = new NpgsqlConnection(connect))
@@ -121,7 +131,7 @@ namespace Hack
                     using (var reader = cmd.ExecuteReader())
                         while (reader.Read())
                         {
-                            id = (reader.GetGuid(0)).ToString();
+                            id = (reader.GetString(0));
                         }
                     conn.Close();
 
@@ -131,7 +141,7 @@ namespace Hack
                     using (var reader1 = cmd1.ExecuteReader())
                         while (reader1.Read())
                         {
-                            string perid = (reader1.GetGuid(0)).ToString();
+                            string perid = reader1.GetString(0);
                             string gend = reader1.GetString(1);
                             var dob = reader1.GetDate(2);
                             int weight = reader1.GetInt32(3);
