@@ -28,11 +28,24 @@ namespace Hack
     {
         public MainWindow()
         {
+            //checkTime();
             InitializeComponent();
            
         }
 
-      
+        //private void checkTime()
+        //{
+         //   string time = DateTime.Now.ToString("hh:mm");
+         //   while (true)
+         //   {
+          //      if (time == "12:47")
+          //      {
+          //          MessageBox.Show("Its time for your lunch!");
+           //         break;
+           //     }
+           // }
+       // }
+
         private void registerClick(object sender, RoutedEventArgs e)
         {
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
