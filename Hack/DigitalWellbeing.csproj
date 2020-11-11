@@ -94,6 +94,9 @@
       <DependentUpon>DbFailHandle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frequentalert.cs" />
+    <Compile Include="GameWindow.xaml.cs">
+      <DependentUpon>GameWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Compile Include="services\Dbconnection.cs" />
     <Compile Include="Utilities\PasswordAuth.cs" />
     <Page Include="DbFailHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -52,7 +52,7 @@
             </Button>
         </StackPanel>
         <StackPanel Margin="263,160,319,175">
-            <Button Height="86" Cursor="Hand" Width="109" Background="{x:Null}" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Margin="-14,0,0,0">
+            <Button Height="86" Cursor="Hand" Click="eyeExercise" Width="109" Background="{x:Null}" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Margin="-14,0,0,0">
                 <Button.ToolTip>
                     <ToolTip>
                         Relax your eye muscles
@@ -67,7 +67,7 @@
             </Button>
         </StackPanel>
         <StackPanel Margin="162,270,430,69">
-            <Button Height="82" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+            <Button x:Name="gameButton" Height="82" Click="gamesClick" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
                 <Button.ToolTip>
                     <ToolTip>
                         Take a break!
