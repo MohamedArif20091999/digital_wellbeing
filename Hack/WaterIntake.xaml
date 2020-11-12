@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hack"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WaterIntake" MaxHeight="450" MaxWidth="700">
+        Title="WaterIntake" MaxHeight="500" MaxWidth="700">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,22 +14,23 @@
                 <GradientStop Color="#FF70F3A9" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="32,31,0,0" TextWrapping="Wrap" Text="Water level of your body" VerticalAlignment="Top" Width="225" FontSize="18" Background="{x:Null}" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Left" Height="189" Stroke="Black" VerticalAlignment="Top" Width="368" Margin="161,196,0,0" Fill="#FFFDFDFD" Opacity="0.4" StrokeThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="21" Margin="32,156,0,0" TextWrapping="Wrap" Text="Know how much you should drink daily!.." VerticalAlignment="Top" Width="314" FontSize="16" Background="{x:Null}" BorderThickness="0"/>
-        <Label Content="Weight" HorizontalAlignment="Left" Margin="233,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.27,0.62" Width="69" FontSize="14"/>
-        <Label Content="Activity" HorizontalAlignment="Left" Margin="233,249,0,0" VerticalAlignment="Top" Width="69" FontSize="14" RenderTransformOrigin="0.526,-0.205"/>
-        <TextBox x:Name="weight" HorizontalAlignment="Left" Height="23" Margin="362,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
-        <Button Content="Calculate" HorizontalAlignment="Left" Margin="306,294,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Background="White" BorderThickness="0" Click="Button_Click"/>
-        <ComboBox x:Name="activitydd" HorizontalAlignment="Left" Margin="362,256,0,0" VerticalAlignment="Top" Width="120" Background="White" SelectionChanged="activitydd_SelectionChanged"/>
-        <TextBox x:Name="comment" HorizontalAlignment="Left" Height="23" Margin="174,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339" FontSize="14" TextChanged="comment_TextChanged"/>
-        <TextBox x:Name="cups" HorizontalAlignment="Left" Height="23" Margin="174,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339" FontSize="14"/>
-        <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Margin="32,368,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="back_Click"/>
-        <Button x:Name="reportnav" Content="Report" HorizontalAlignment="Left" Margin="593,368,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="66" Margin="32,74,0,0" TextWrapping="Wrap" Text="We need water for digestion, to absorb nutrients, to help us move, get rid of &#xD;&#xA;waste products and to regulate our body temperature. If the body doesn't have&#xD;&#xA;enough water (known as dehydration), it won't function as well." VerticalAlignment="Top" Width="497" FontSize="14" Background="{x:Null}" BorderThickness="0"/>
+        <Rectangle HorizontalAlignment="Left" Height="229" Stroke="Black" VerticalAlignment="Top" Width="372" Margin="161,210,0,0" Fill="#FFFDFDFD" Opacity="0.4" StrokeThickness="0"/>
+        <Label Content="Weight" HorizontalAlignment="Left" Margin="233,229,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.27,0.62" Width="69" FontSize="14"/>
+        <Label Content="Activity" HorizontalAlignment="Left" Margin="233,263,0,0" VerticalAlignment="Top" Width="69" FontSize="14" RenderTransformOrigin="0.526,-0.205"/>
+        <TextBox x:Name="weight" HorizontalAlignment="Left" Height="23" Margin="362,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Margin="306,308,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Background="White" BorderThickness="0" Click="Button_Click"/>
+        <ComboBox x:Name="activitydd" HorizontalAlignment="Left" Margin="362,270,0,0" VerticalAlignment="Top" Width="120" Background="White" SelectionChanged="activitydd_SelectionChanged"/>
+        <Button x:Name="back" Content="Back" HorizontalAlignment="Left" Margin="32,416,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="back_Click"/>
+        <Button x:Name="reportnav" Content="Report" HorizontalAlignment="Left" Margin="594,416,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
         <GridSplitter HorizontalAlignment="Left" Height="23" Margin="601,15,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
         <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="549,18,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" Click="profile_Click"/>
         <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="607,18,0,0" VerticalAlignment="Top" Width="62" BorderThickness="0" Background="{x:Null}"/>
+        <Label Content="Water level of your body" HorizontalAlignment="Left" Margin="32,24,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Label Content="We need water for digestion, to absorb nutrients, to help us move, get rid of &#xA;waste products and to regulate our body temperature. If the body doesn't have&#xA;enough water (known as dehydration), it won't function as well." HorizontalAlignment="Left" Margin="32,75,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Know how much you should drink daily!.." HorizontalAlignment="Left" Margin="32,157,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="comment" HorizontalAlignment="Left" IsReadOnly="True" Height="23" Margin="182,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="14"/>
+        <TextBox x:Name="cups" HorizontalAlignment="Left" IsReadOnly="True" Height="23" Margin="182,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="14"/>
+        <TextBox x:Name="remark" HorizontalAlignment="Left" IsReadOnly="True" Height="23" Margin="182,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="14"/>
 
     </Grid>
 </Window>

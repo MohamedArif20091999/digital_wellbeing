@@ -28,6 +28,7 @@ namespace Hack
             proname = uname;
             comment.Visibility = Visibility.Hidden;
             cups.Visibility = Visibility.Hidden;
+            remark.Visibility = Visibility.Hidden;
         }
 
         private void signout_Button_Click_1(object sender, RoutedEventArgs e)
@@ -47,13 +48,51 @@ namespace Hack
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            float pound= ((float.Parse(weight.Text) * (float)(2.205 * 0.667)) / (float)33.814);
+            float pound= ((float.Parse(weight.Text) * (float)(2.205 )) * (float)0.5) / (float)33.814;
             string water = pound.ToString();
             comment.Text = ("You have to drink "+water+" liters of water per day");
             int glass = Convert.ToInt32(Math.Floor(float.Parse(water) * 4));
             cups.Text = "This is equal to " + glass + " glsses of water";
-            comment.Visibility = Visibility.Visible;
-            cups.Visibility = Visibility.Visible;
+
+            var connect = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            using (var conn = new NpgsqlConnection(connect))
+            {
+                try
+                {
+                    conn.Open();
+                    //Trace.WriteLine("connection opened!!");
+                    string query = "SELECT * FROM waterintake";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    using (var reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            string act = reader.GetString(0);
+                            int extra = reader.GetInt32(1);
+                            //MessageBox.Show(act);
+                            if (string.Equals(activitydd.SelectedItem.ToString(),act))
+                            {
+                                if (!(string.Equals(activitydd.SelectedItem.ToString(), "sedentary")))
+                                {
+                                    remark.Text= "You're being " + act + ", so drink extra " + extra + " more glasses";
+                                }
+                                else
+                                {
+                                    remark.Text = "Boost your energy!";
+                                }
+                            }
+                            
+                        }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                comment.Visibility = Visibility.Visible;
+                cups.Visibility = Visibility.Visible;
+                remark.Visibility = Visibility.Visible;
+            }
 
         }
 
@@ -121,5 +160,9 @@ namespace Hack
             profile.Show();
             this.Close();
         }
+
+        
     }
-}
+
+       
+    }

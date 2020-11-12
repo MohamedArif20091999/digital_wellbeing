@@ -47,10 +47,10 @@ namespace Hack
                 {
                     conn.Open();
                     //Trace.WriteLine("connection opened!!");
-                    string query = "INSERT INTO waterintake(activity,workpm) VALUES('sedentary',1);" +
-                        "INSERT INTO waterintake(activity,workpm) VALUES('light activity',20);" +
-                        "INSERT INTO waterintake(activity,workpm) VALUES('moderately active',60);" +
-                        "INSERT INTO waterintake(activity,workpm) VALUES('highly active',100);";
+                    string query = "INSERT INTO waterintake(activity,workpm) VALUES('sedentary',0);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('light activity',2);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('moderately active',3);" +
+                        "INSERT INTO waterintake(activity,workpm) VALUES('highly active',4);";
                     using (var cmd = new NpgsqlCommand(query, conn))
                     using (var reader = cmd.ExecuteReader())
                     conn.Close();

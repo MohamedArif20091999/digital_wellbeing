@@ -242,6 +242,11 @@
   <ItemGroup>
     <Resource Include="cr10.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="download.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
