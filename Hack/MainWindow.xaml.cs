@@ -40,7 +40,12 @@ namespace Hack
                 Frequentalert.checkTime();
             });
             t2.Start();
+
+           
+
             Trace.WriteLine("connection succeeded");
+           // Timercheck tc = new Timercheck();
+            //tc.Show();
             InitializeComponent();
           
 

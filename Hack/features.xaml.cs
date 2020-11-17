@@ -86,5 +86,17 @@ namespace Hack
             System.Diagnostics.Process.Start(s[rand]);
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void setTime(object sender, RoutedEventArgs e)
+        {
+            SetTime st = new SetTime();
+            st.Show();
+            this.Close();
+        }
     }
 }

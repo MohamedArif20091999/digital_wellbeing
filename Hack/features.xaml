@@ -20,9 +20,9 @@
         <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
         <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14">
         </Button>
-        <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="599,24,0,0" VerticalAlignment="Top" Width="62" FontSize="14" BorderThickness="0" Background="{x:Null}" Click="signout_Click" />
+        <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="599,24,0,0" VerticalAlignment="Top" Width="62" FontSize="14" BorderThickness="0" Background="{x:Null}" />
         <StackPanel Margin="50,160,540,164">
-            <Button Height="94" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
+            <Button Height="94" Click="setTime" Cursor="Hand" Background="{x:Null}" BorderThickness="0,0,0,0">
                 <Button.ToolTip>
                     <ToolTip>
                         Set timers for breaks

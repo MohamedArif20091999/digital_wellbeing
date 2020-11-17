@@ -1,0 +1,48 @@
+﻿<Window x:Class="Hack.SetTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+
+        xmlns:local="clr-namespace:Hack"
+        
+        mc:Ignorable="d"
+        
+        Title="SetTime" Height="450" Width="800">
+    <Grid>
+        <Grid Visibility="Visible" RenderTransformOrigin="0.505,0.522">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA2EBE8" Offset="1"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFA2EBE8"/>
+                    <GradientStop Color="#FF70F3A9" Offset="0.93"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <GridSplitter HorizontalAlignment="Left" Height="23" Margin="593,21,0,0" VerticalAlignment="Top" Width="1" Background="Black"/>
+            <Button x:Name="profile" Cursor="Hand" Content="Profile" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top" Width="47" Background="{x:Null}" BorderThickness="0" FontSize="14">
+            </Button>
+            <Button x:Name="signout" Cursor="Hand" Content="Sign out" HorizontalAlignment="Left" Margin="599,24,0,0" VerticalAlignment="Top" Width="62" FontSize="14" BorderThickness="0" Background="{x:Null}"/>
+            <ComboBox x:Name="combobox" HorizontalAlignment="Left" Height="30" Margin="223,197,0,0" VerticalAlignment="Top" Width="152" IsEditable="True" Background="Black" FontSize="16">
+                <ComboBoxItem Height="30">11.30</ComboBoxItem>
+                <ComboBoxItem Height="30">12.00</ComboBoxItem>
+                <ComboBoxItem Height="30">12.30</ComboBoxItem>
+                <ComboBoxItem Height="30">13.00</ComboBoxItem>
+                <ComboBoxItem Height="30">13.30</ComboBoxItem>
+                <ComboBoxItem Height="30">14.00</ComboBoxItem>
+                <ComboBoxItem Height="30">14.30</ComboBoxItem>
+                <ComboBoxItem Height="30">15.00</ComboBoxItem>
+                <ComboBoxItem Height="30">15.30</ComboBoxItem>
+
+
+            </ComboBox>
+            <Button  x:Name="submit" Content="SAVE" HorizontalAlignment="Left" Height="41" Margin="576,319,0,0" VerticalAlignment="Top" Width="124" Click="submit_Click" FontSize="20" FontWeight="Bold" Background="#FFFDF0F0"/>
+            <Label Content="Take a break at regular intervals to boost up your energy.&#xA;Set alerts to customize your breaks with our timer.&#xA;&#xA;Alert me every   -------  for short water breaks.&#xA;&#xA;&#xA;Let us know your lunch time to remind earlier!&#xA;&#xA;&#xA;                    &#xA;                                                     " HorizontalAlignment="Left" Height="164" Margin="56,25,0,0" VerticalAlignment="Top" Width="596" FontWeight="Bold" FontSize="16"/>
+            <Button  x:Name="goback" Content="BACK" HorizontalAlignment="Left" Height="41" Margin="56,319,0,0" VerticalAlignment="Top" Width="124" Click="submit_Click" FontSize="20" FontWeight="Bold" Background="#FFFDF0F0"/>
+            <Label Content="Lunch Time:" HorizontalAlignment="Left" Height="30" Margin="83,197,0,0" VerticalAlignment="Top" Width="115" FontSize="16" FontWeight="Bold"/>
+        </Grid>
+        <xctk:TimePicker x:Name="TimePic" Margin="226,244,334,110"  Value="12:00" FontSize="20"  />
+
+    </Grid>
+</Window>
